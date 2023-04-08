@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fine Foodworks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup-verify.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center mx-1 my-5">
+        <div class="col-md-4">
+          <div class="signup-form pt-2 pb-1">
+            <div class="form-header">
+              <h1 class="text-center">Fine Foodworks</h1>
+              <hr class="border-4 border-dark">
+            </div>
+            <form action="/signup" method="POST">
+              <center><span>{{ exits }}</span></center>
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="fullname" class="form-control" placeholder="Full Name" required>
+              </div>
+              <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Username" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+              </div>
+              <div class="form-group">
+                <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <hr class="border-4 border-dark">
+            <center><p>Already have account:<a href="#">Log in</a></p></center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
