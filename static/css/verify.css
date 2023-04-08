@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+  
+  .signup-form {
+    background-color: #fff;
+    border: 1px solid #0e0d0d;
+    padding: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .form-header h1 {
+    background-color: #bb5ed3;
+    color: #fcf7f7;
+    font-size: 25px;
+    font-weight: 600;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .otc {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .otc fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .otc fieldset div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="number"] {
+    line-height: 1;
+    margin: .1em;
+    padding: 8px 0 4px;
+    font-size: 2.65em;
+    text-align: center;
+    appearance: textfield;
+    -webkit-appearance: textfield;
+    border: 2px solid #0c0c0c;
+    color: purple;
+    border-radius: 4px;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* 2 group of 3 items */
+  input[type="number"]:nth-child(n+4) {
+    order: 2;
+  }
+  
+  .otc div::before {
+    content: '';
+    height: 2px;
+    width: 24px;
+    margin: 0 .25em;
+    order: 1;
+    background: #070707;
+  }
+  
+  /* From: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+  .otc label {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
+  
+  .btn-primary1 {
+    background-color: #3897f0;
+    border-color: #3897f0;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  fieldset input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: -1;
+    padding: 8px;
+    font-size: 16px;
+  }
+  

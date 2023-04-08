@@ -7,12 +7,17 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   </head>
   <body>
-    <div class="container">
+    <div id="loading" class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>   
+    <div id="page-content" class="container border-4 border-dark">
       <div class="row justify-content-center mx-1 my-5">
         <div class="col-md-4">
           <div class="signup-form pt-2 pb-1">
             <div class="form-header">
-              <h1 class="text-center">Fine Foodworks</h1>
+              <h1 class="text-center">Fineworks</h1>
               <hr class="border-4 border-dark">
             </div>
             <form action="/signup" method="POST">
@@ -32,14 +37,19 @@
               <div class="form-group">
                 <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
               </div>
-              <button type="submit" class="btn btn-primary">Sign Up</button>
+              <center><button type="submit" class="btn-primary1 ">Sign Up</button></center>
             </form>
             <hr class="border-4 border-dark">
             <center><p>Already have account:<a href="#">Log in</a></p></center>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</body>
+    </div>    
+    <script>
+      window.onload = function() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('page-content').style.display = 'block';
+      };
+    </script>
+  </body>
 </html>

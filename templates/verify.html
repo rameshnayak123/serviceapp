@@ -1,120 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        .otc {
-	position: relative;
-	width: 320px;
-	margin: 0 auto;
-}
-
-.otc fieldset {
-	border: 0;
-	padding: 0;
-	margin: 0;
-}
-
-.otc fieldset div {
-	display: flex;
-	align-items: center;
-}
-
-.otc legend {
-	margin: 0 auto 1em;
-	color: #5555FF;
-}
-
-input[type="number"] {
-	width: .82em;
-	line-height: 1;
-	margin: .1em;
-	padding: 8px 0 4px;
-	font-size: 2.65em;
-	text-align: center;
-	appearance: textfield;
-	-webkit-appearance: textfield;
-	border: 2px solid #BBBBFF;
-	color: purple;
-	border-radius: 4px;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* 2 group of 3 items */
-input[type="number"]:nth-child(n+4) {
-	order: 2;
-}
-.otc div::before {
-	content: '';
-	height: 2px;
-	width: 24px;
-	margin: 0 .25em;
-	order: 1;
-	background: #BBBBFF;
-}
-
-/* From: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
-.otc label {
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
-}
-
-body, html {
-	height: 100%;
-}
-body {
-	display: flex;
-	align-items: center;
-	justif-content: center;
-}
-    </style>
     <title>Verify Email</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup-verify.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/verify.css') }}">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-    <div class="row justify-content-center mx-1 my-5">
-    <div class="col-md-4">
-    <form class="otc" name="one-time-code" action="#">
-        <input type="hidden" name="email" value="{{ email }}">
-            <fieldset>
-                <legend>Validation Code</legend>
-                <label for="otc-1">Number 1</label>
-                <label for="otc-2">Number 2</label>
-                <label for="otc-3">Number 3</label>
-                <label for="otc-4">Number 4</label>
-                <label for="otc-5">Number 5</label>
-                <label for="otc-6">Number 6</label>
-        
-                <!-- https://developer.apple.com/documentation/security/password_autofill/enabling_password_autofill_on_an_html_input_element -->
-                <div>
-                <input type="number" pattern="[0-9]*"  value="" inputtype="numeric" autocomplete="one-time-code" id="otc-1" required>
-        
-                <!-- Autocomplete not to put on other input -->
-                <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-2" required>
-                <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-3" required>
-                <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-4" required>
-                <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-5" required>
-                <input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-6" required>
-                </div>
-            </fieldset>
-        </form>
-    </div>
-    </div>
-    </div>
+    <div id="page-content" class="container border-4 border-dark overflow-auto">
+		<div class="row justify-content-center mx-1 my-5">
+			  <div class="col-md-4">
+				<div class="signup-form">
+					<div class="form-header">
+					  <h1 class="text-center">Fineworks</h1>
+					  <hr class="border-4 border-dark">
+					</div>
+					<form class="otc" name="one-time-code" method="POST" action="/verify">
+						<input type="hidden" name="email" value="{{ email }}">
+						<fieldset>
+						<label for="otc-1">Number 1</label>
+						<label for="otc-2">Number 2</label>
+						<label for="otc-3">Number 3</label>
+						<label for="otc-4">Number 4</label>
+						<label for="otc-5">Number 5</label>
+						<label for="otc-6">Number 6</label>
+						<div>
+							<input type="number" pattern="[0-9]*"  value="" inputtype="numeric" autocomplete="one-time-code" id="otc-1" required>
+							<input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-2" required>
+							<input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-3" required>
+							<input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-4" required>
+							<input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-5" required>
+							<input type="number" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-6" required>
+							<input type="hidden" name="otp" id="otp" value="">
+						</div>
+						</fieldset>
+						<center><input type="submit" value="Submit" class="btn-primary1" onclick="combineDigits()" /></center>
+					</form>
+				</div>	  
+			</div>
+		</div>
+	</div>
+	
 </body>
 <script>
     let in1 = document.getElementById('otc-1'),
@@ -188,5 +114,16 @@ ins.forEach(function(input) {
  * It catches the value pasted on the first field and spread it into the inputs.
  */
 in1.addEventListener('input', splitNumber);
+
+function combineDigits() {
+  var otc1 = document.getElementById('otc-1').value;
+  var otc2 = document.getElementById('otc-2').value;
+  var otc3 = document.getElementById('otc-3').value;
+  var otc4 = document.getElementById('otc-4').value;
+  var otc5 = document.getElementById('otc-5').value;
+  var otc6 = document.getElementById('otc-6').value;
+  var otp = otc1 + otc2 + otc3 + otc4 + otc5 + otc6;
+  document.getElementById('otp').value = otp;
+}
 </script>
 </html>
