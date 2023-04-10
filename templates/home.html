@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Fine Works</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Fine <span>Works</span></a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('signup') }}">SignUp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+    <!-- Body code -->
+    <div class="container mt-3">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3">
+              <img src="https://media.istockphoto.com/id/1389857295/photo/african-american-woman-bakers-looking-at-camera-chef-baker-in-a-chef-dress-and-hat-cooking.jpg?b=1&s=170667a&w=0&k=20&c=s8-SqB42J9Fmo1nmtk0vrOeJJTMijxy7ojZscL7d6pc=" class="card-img-top" alt="catering">
+              <div class="card-body">
+                <h5 class="card-title">Catering</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac diam eget turpis blandit cursus vel at risus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card mb-3">
+              <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0ZXJpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="cuisine">
+              <div class="card-body">
+                <h5 class="card-title">Cuisine</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac diam eget turpis blandit cursus vel at risus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card mb-3">
+              <img src="https://images.unsplash.com/photo-1515715709530-858f7bfa1b10?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlZGRpbmclMjBkZWNvcmF0aW9ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="flowers">
+              <div class="card-body">
+                <h5 class="card-title">Flowers</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac diam eget turpis blandit cursus vel at risus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js" integrity="sha512-Wzt9K2QByCO42ZzB5wSLwe//LbfAm5yPkB5fsgmHm02G9gy9b2QZ5EFDZPw5j5W5i5NZuuB1rsBBg05kTuJxHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
