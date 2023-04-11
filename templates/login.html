@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Fine Works</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Fine <span>Works</span></a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('signup') }}">SignUp</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- form div-->   
+    <div id="page-content" class="container border-4 border-dark">
+        <div class="row justify-content-center mx-1 my-5">
+          <div class="col-md-4">
+            <div class="signup-form pt-2 pb-1">
+              <div class="form-header">
+                <h1 class="text-center">Login</h1>
+                <hr class="border-4 border-dark">
+              </div>
+              <form action="/signup" method="POST">
+                <center><span>{{ exits }}</span></center>
+                <div class="form-group">
+                  <input type="text" name="username" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                  <input type="password" name="password" class="form-control" placeholder="Password" required>
+                </div>
+                <center><button type="submit" class="btn-primary1">Log in</button></center>
+              </form>
+              <hr class="border-4 border-dark">
+              <center><p>Do not have account:<a href="#">Signup</a></p></center>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <script>
+        window.onload = function() {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('page-content').style.display = 'block';
+        };
+        </script>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js" integrity="sha512-Wzt9K2QByCO42ZzB5wSLwe//LbfAm5yPkB5fsgmHm02G9gy9b2QZ5EFDZPw5j5W5i5NZuuB1rsBBg05kTuJxHg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

@@ -1,32 +1,55 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #fafafa;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+}
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+  font-size: 40px;
+  font-weight: bold;
+  color: #6c757d;
+}
+.navbar-brand span {
+  color: #007bff;
+}
+.navbar-nav .nav-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: #6c757d;
+}
+.navbar-nav .nav-link:hover {
+  color: #007bff;
+}
+.navbar-nav .active {
+  color: #007bff !important;
+}
+.container-fluid {
+  max-width: 1200px;
+}
+  .navbar-nav .nav-item a {
+    background-color: #fff;
+    border: 2px solid #3897f0;
+    color: #080808;
+    padding: 4px 10px;
+    margin-left: 3px;
+    margin-top: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
   }
-  .navbar {
-    background-color: #ffffff;
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
-  }
-  .navbar-brand {
-    font-size: 40px;
-    font-weight: bold;
-    color: #6c757d;
-  }
-  .navbar-brand span {
-    color: #007bff;
-  }
-  .navbar-nav .nav-link {
-    font-size: 18px;
-    font-weight: bold;
-    color: #6c757d;
-  }
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
-  }
-  .navbar-nav .active {
-    color: #007bff !important;
-  }
-  .container-fluid {
-    max-width: 1200px;
+  
+  .navbar-nav .nav-item a:hover {
+    border-color:  #bb5ed3;
+    color: #0a0a0a;
+    transition: all 0.3s ease-in-out;
   }
 
   .signup-form {

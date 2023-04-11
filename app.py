@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 import random
 import re
@@ -38,9 +38,35 @@ def send_email(email, otp):
 @app.route('/')
 def index():
     return render_template('home.html')
+
 @app.route('/signup')
 def signup():
-    return render_template('index.html')
+    return render_template('signup.html')
+
+@app.route('/dash')
+def dash():
+    return render_template('dashboard.html')
+
+@app.route('/login', methods=['POST', 'GET'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(username=username).first()
+        if user and user.password == password:
+            session['email'] = user.email
+            session['verified'] = True
+            return redirect(url_for('dashboard'))
+        else:
+            return render_template('login.html', exits="Invalid username or password")
+    else:
+        # check if user is already logged in, if yes, redirect to dashboard
+        if 'email' in session and session['verified']:
+            return redirect(url_for('dashboard'))
+        else:
+            # render the login page
+            return render_template('login.html')
+
 
 @app.route('/signup', methods=['POST'])
 def signup1():
@@ -54,18 +80,18 @@ def signup1():
     user_email = User.query.filter_by(email=email).first()
     user_username = User.query.filter_by(username=username).first()
     if user_email:
-        return render_template('index.html',exits="Email already exits")
+        return render_template('signup.html', exits="Email already exits")
     if user_username:
-        return render_template('index.html',exits="Username already taken")
+        return render_template('signup.html', exits="Username already taken")
 
     # check if password and confirm password match
     password_regex = r"^(?=.*[A-Z])(?=.*[@#$%^&+=])(?=.*[0-9])(?=.*[a-z]).{6,}$"
     if password != confirm_password:
-        return render_template('index.html',exits="Password do not match")
-    
+        return render_template('signup.html', exits="Password do not match")
+
     # check if password meets criteria
     if not re.match(password_regex, password):
-        return render_template('index.html',exits="Password should be: Exam@123")
+        return render_template('signup.html', exits="Password should be: Exam@123")
 
     # generate OTP and create new user in the database
     otp = random.randint(100000, 999999)
@@ -73,22 +99,35 @@ def signup1():
     db.session.add(user)
     db.session.commit()
     send_email(email, otp)
+
+    # store user information in session
+    session['email'] = email
+    session['verified'] = False
+
     return render_template('verify.html', email=email)
 
-@app.route('/ver')
-def ver():
-    return render_template('verify.html')
 
 @app.route('/verify', methods=['POST'])
 def verify():
-    email = request.form['email']
+    email = session['email']
     otp = request.form['otp']
     user = User.query.filter_by(email=email).first()
     if user and str(user.otp) == otp:
         user.otp = None
         db.session.commit()
-        return 'Email verification successful'
-    return 'Invalid OTP'
+        session['verified'] = True
+        return redirect(url_for('dashboard'))
+    return render_template('verify.html',error="OTP not matched")
+
+
+@app.route('/dashboard', methods=['GET'])
+def dashboard():
+    # check if user is logged in, if not redirect to signup page
+    if 'email' not in session or not session['verified']:
+        return redirect(url_for('signup1'))
+    else:
+        # render the dashboard page
+        return render_template('dashboard.html')
 
 if __name__ == '__main__':
     with app.app_context():

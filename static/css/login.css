@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+  .navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-brand {
+    font-size: 40px;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  .navbar-brand span {
+    color: #007bff;
+  }
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6c757d;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #007bff;
+  }
+  .navbar-nav .active {
+    color: #007bff !important;
+  }
+  .container-fluid {
+    max-width: 1200px;
+  }
+    .navbar-nav .nav-item a {
+      background-color: #fff;
+      border: 2px solid #3897f0;
+      color: #080808;
+      padding: 4px 10px;
+      margin-left: 3px;
+      margin-top: 3px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .navbar-nav .nav-item a:hover {
+      border-color:  #bb5ed3;
+      color: #0a0a0a;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .signup-form {
+      background-color: #fff;
+      border: 1px solid #0e0d0d;
+      padding:10px;
+    }
+  
+    .form-header h1 {
+      background-color: #bb5ed3;
+      color: #fcf7f7;
+      font-size: 25px;
+      font-weight: 600;
+      padding: 5px;
+      margin-bottom: 5px;
+      
+    }
+  
+    .form-group {
+      padding-top: 2px;
+      margin-bottom: 20px;
+    }
+  
+    .form-control {
+      border-radius: 3px;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+  
+    .btn-primary1 {
+      background-color: #fff;
+      border-color: #3897f0;
+      color: #080808;
+      border-radius: 50px; /* Use a large value to create an oval shape */
+      padding: 5px 35px; /* Increase the padding to increase the width */
+      font-size: 18px;
+      font-weight: 800px;
+      text-align: center;
+      text-transform: uppercase;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .btn-primary1:hover {
+      border-color:  #bb5ed3;
+      color: #0a0a0a;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .signup-login {
+      text-align: center;
+    }
+    #loading {
+      position: fixed;
+      z-index: 9999;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
